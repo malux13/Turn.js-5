@@ -28,58 +28,80 @@ function loadPage(page, pageElement) {
 
 	var img = $('<img />');
 
-	img.on('mousedown', function(e) {
+	img.on('mousedown', function (e) {
 		e.preventDefault();
 	});
 
-	img.on('load', function() {
-		
+	img.on('load', function () {
+
 		// Set the size
-		$(this).css({width: '100%', height: '100%'});
+		$(this).css({ width: '100%', height: '100%' });
 
 		// Add the image to the page after loaded
 
 		$(this).appendTo(pageElement);
 
 		// Remove the loader indicator
-		
+
 		pageElement.find('.loader').remove();
 	});
 
 	// Load the page
 
-	img.attr('src', 'pages/' +  page + '.jpg');
+	img.attr('src', 'pages/' + page + '.jpg');
 
 }
 
 
 function loadLargePage(page, pageElement) {
-	
+
 	var img = $('<img />');
 
-	img.on('load', function() {
+	img.on('load', function () {
 
 		var prevImg = pageElement.find('img');
-		$(this).css({width: '100%', height: '100%'});
+		$(this).css({ width: '100%', height: '100%' });
 		$(this).appendTo(pageElement);
 		prevImg.remove();
-		
+
 	});
 
 	// Loadnew page
-	
-	img.attr('src', 'pages/' +  page + '-large.jpg');
+
+	img.attr('src', 'pages/' + page + '-large.jpg');
 }
 
 
 function loadSmallPage(page, pageElement) {
-	
+
 	var img = pageElement.find('img');
 
-	img.css({width: '100%', height: '100%'});
+	img.css({ width: '100%', height: '100%' });
 
 	img.off('load');
 	// Loadnew page
 
-	img.attr('src', 'pages/' +  page + '.jpg');
+	img.attr('src', 'pages/' + page + '.jpg');
 }
+function resizeViewport() {
+
+	var width = $(".containerCanvas").width(),
+		height = $(".containerCanvas").height(),
+		options = $('.flipbook').turn('options');
+
+	$('.flipbook').removeClass('animated');
+
+	$('.flipbook-viewport').css({
+		width: width,
+		height: height
+	}).
+		zoom('resize');
+}
+
+$(window).on('resize', function () {
+	resizeViewport();
+}).on('orientationchange', function () {
+	resizeViewport();
+});
+
+resizeViewport();

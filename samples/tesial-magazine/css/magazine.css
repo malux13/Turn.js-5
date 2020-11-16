@@ -315,3 +315,11 @@ body{
 	bottom:0;
 	width:100%;
 }
+
+div.containerCanvas{
+	position:relative;
+	width:50%;
+	top:0;
+	left:0;
+	height:300px;
+}

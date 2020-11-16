@@ -212,8 +212,8 @@ function disableControls(page) {
 
 function resizeViewport() {
 
-	var width = $(window).width(),
-		height = $(window).height(),
+	var width = $(".containerCanvas").width(),
+		height = $(".containerCanvas").height(),
 		options = $('.magazine').turn('options');
 
 	$('.magazine').removeClass('animated');

@@ -1,76 +1,82 @@
 <!doctype html>
 <html lang="en">
+
 <head>
 
-<script type="text/javascript" src="../../extras/jquery.min.js"></script>
-<script type="text/javascript" src="../../lib/turn.min.js"></script>
-<link rel="stylesheet" href="css/basic.css">
-<script type="text/javascript" src="js/imageMapResizz.js"></script>
+	<script type="text/javascript" src="../../extras/jquery.min.js"></script>
+	<script type="text/javascript" src="../../lib/turn.min.js"></script>
+	<link rel="stylesheet" href="css/basic.css">
+	<script type="text/javascript" src="js/imageMapResizz.js"></script>
 </head>
+
 <body>
 
-<div class="flipbook-viewport">
-	<div class="container">
-		<div class="flipbook">
-			<img src="pages/1.png" usemap="#map1">
-			<img src="pages/2.png">
-			<img src="pages/3.png">
-			<img src="pages/4.png">
-			<img src="pages/5.png">
-			<img src="pages/6.png">
-			<img src="pages/7.png">
-			<img src="pages/8.png">
-			<img src="pages/9.png">
-			<img src="pages/10.png">
-			<img src="pages/11.png">
+	<div class="containerCanvas">
+		<div class="flipbook-viewport">
+			<div class="container">
+				<div class="flipbook">
+					<img src="pages/1.png" usemap="#map1">
+					<img src="pages/2.png">
+					<img src="pages/3.png">
+					<img src="pages/4.png">
+					<img src="pages/5.png">
+					<img src="pages/6.png">
+					<img src="pages/7.png">
+					<img src="pages/8.png">
+					<img src="pages/9.png">
+					<img src="pages/10.png">
+					<img src="pages/11.png">
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
 
-<map name="map1">
-	<area target="_blank" alt="Atlas Concorde" title="Atlas Concorde" href="https://www.atlasconcorde.com/fr/" coords="935,2039,1739,2124" shape="rect">
-	<area target="_blank" alt="Tesial" title="Tesial" href="https://tesial.be" coords="86,190,247,585" shape="rect">
-</map>
+	<map name="map1">
+		<area target="_blank" alt="Atlas Concorde" title="Atlas Concorde" href="https://www.atlasconcorde.com/fr/"
+			coords="935,2039,1739,2124" shape="rect">
+		<area target="_blank" alt="Tesial" title="Tesial" href="https://tesial.be" coords="86,190,247,585" shape="rect">
+	</map>
 
-<script type="text/javascript">
+	<script type="text/javascript">
 
-function loadApp() {
+		function loadApp() {
 
-	// Create the flipbook
+			// Create the flipbook
 
-	$('.flipbook').turn({
-			// Width
+			$('.flipbook').turn({
+				// Width
 
-			width:922,
-			
-			// Height
+				width: 922,
 
-			height:600,
+				// Height
 
-			// Elevation
+				height: 600,
 
-			elevation: 50,
-			
-			// Enable gradients
+				// Elevation
 
-			gradients: true,
-			
-			// Auto center this flipbook
+				elevation: 50,
 
-			autoCenter: true
+				// Enable gradients
 
-	});
-}
+				gradients: true,
 
-// Load turn.js
+				// Auto center this flipbook
 
-loadApp();
+				autoCenter: true
 
-$(document).ready(function() {
-    $('map').imageMapResize();
-});
+			});
+		}
 
-</script>
+		// Load turn.js
+
+		loadApp();
+
+		$(document).ready(function () {
+			$('map').imageMapResize();
+		});
+
+	</script>
 
 </body>
+
 </html>

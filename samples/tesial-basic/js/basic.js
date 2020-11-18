@@ -83,25 +83,3 @@ function loadSmallPage(page, pageElement) {
 
 	img.attr('src', 'pages/' + page + '.jpg');
 }
-function resizeViewport() {
-
-	var width = $(".containerCanvas").width(),
-		height = $(".containerCanvas").height(),
-		options = $('.flipbook').turn('options');
-
-	$('.flipbook').removeClass('animated');
-
-	$('.flipbook-viewport').css({
-		width: width,
-		height: height
-	}).
-		zoom('resize');
-}
-
-$(window).on('resize', function () {
-	resizeViewport();
-}).on('orientationchange', function () {
-	resizeViewport();
-});
-
-resizeViewport();
